@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            $(document).ready(function () {
+                function pagination() {
+                    var pageLimit =10;
+                    var noPages;
+                    if (10 > pageLimit) {
+                        noPages = (10 / pageLimit) + (10 % pageLimit);
+                        for (var i = 1; i <= noPages; i++) {
+                            $('#btn').append("<button>"+ text(i) +"</button>");
+
+                        }
+                    }
+
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="btn"></div>
+    </body>
+</html>

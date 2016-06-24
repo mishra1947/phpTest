@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js" type="text/javascript"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js" type="text/javascript"></script>
+        <script>
+           var Todo = Backbone.Model.extend({
+              
+               defaults:{
+                   completed:false
+               },
+               validate:function(attributes){
+                   if(attributes.title===undefined){
+                       return "remember to set a title for ur todo";
+                   }
+               },
+                initialize: function(){
+                   console.log("this model is initialised");
+                   this.on("invalid",function(model,error){
+                       console.log(error);
+                   });
+               }
+           });
+           var myTodo = new Todo();
+           myTodo.set("completed",true, {validate: true});
+           console.log('completed: '+myTodo.get('completed'));
+        </script>
+    </body>
+</html>

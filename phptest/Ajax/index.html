@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../userManagement/js/jquery-1.9.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                    $.ajax({
+                        type:'POST',
+                        url: 'do.json',
+                        dataType:'json',
+                        success: function(response){
+                            $.each(response.system,function(i,value){
+                                $('#result').append(value.company + " : " + value.Os + "<br>");
+                            });
+                        },
+                        error: function(response){
+                             console.log(response.system);
+                        } 
+                        
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>
+            This is all about Ajax.
+        </p>
+        <div id='result'> </div>
+        <button id='btn'>Magic Key</button>
+    </body>
+</html>

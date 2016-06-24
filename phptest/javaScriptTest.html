@@ -1,0 +1,51 @@
+<!--<html>
+   <body>
+      
+      <script type="text/javascript">
+         
+            var aProperty;
+            var obj = {
+                name: "nitesh",
+                age: 33,
+                phone: 32981231
+            };
+            document.write("Navigator Object Properties<br /> ");
+         
+            for (aProperty in obj) {
+               document.write(aProperty);
+                document.write(" : ");
+               document.write(obj[aProperty]);
+               document.write("<br />");
+            }
+            document.write ("Exiting from the loop!");
+         //
+      </script>
+      
+      <p>Set the variable to different object and then try...</p>
+   </body>
+</html>-->
+
+<html>
+   <body>
+      
+      <script type = "text/javascript">
+         <!--
+            function WriteCookie()
+            {
+               if( document.myform.customer.value == "" ){
+                  alert("Enter some value!");
+                  return;
+               }
+               cookievalue= escape(document.myform.customer.value) + ";";
+               alert(cookievalue);
+               document.cookie="name=" + cookievalue;
+               document.write ("Setting Cookies : " + "name=" + cookievalue );
+            }
+         //-->
+      </script>
+      <form name="myform" action="">
+         Enter name: <input type="text" name="customer"/>
+         <input type="button" value="Set Cookie" onclick="WriteCookie();"/>
+      </form>
+   </body>
+</html>

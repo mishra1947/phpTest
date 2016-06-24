@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sign Up Form</title>
+        <!---------- CSS ------------>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+            <script src="js/jquery-1.9.0.js"></script>
+            <script src="js/validation.js"></script>
+    </head>
+
+    <body>
+
+        <!--BEGIN #signup-form -->
+        <div id="signup-form">
+
+            <!--BEGIN #subscribe-inner -->
+            <div id="signup-inner">
+
+                <div class="clearfix" id="header">
+
+                    <img id="signup-icon" src="images/signup.png" alt="" />
+
+                    <h1>User Sign Up Form</h1>
+                </div>
+                <form id="frm" action="php/registration.php" method="post">
+                    <p>
+                        <label for="firstname">First Name <span style="color: red">*</span></label>
+                        <input id="fname" type="text" name="fname" value=""/>
+                        <div id="fname_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="lastname">Last Name <span style="color: red">*</span></label>
+                        <input id="lname" type="text" name="lname" value="" />
+                        <div id="lname_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="username">Username <span style="color: red">*</span></label>
+                        <input id="uname" type="text" name="uname" value="" />
+                        <div id="uname_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+
+                        <label for="email">Email <span style="color: red">*</span></label>
+                        <input id="email" type="text" name="email" value=""/>
+                        <div id="email_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="password">Password <span style="color: red">*</span></label>
+                        <input id="password" type="password" name="password" value=""/>
+                        <div id="password_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="confirm_password">Confirm-Password <span style="color: red">*</span></label>
+                        <input id="c_password" type="password" name="c_password" maxlength="08" value=""/>
+                        <div id="error_Cpassword" style="color: red"></div>
+                    </p>
+
+                    <p>
+
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text" name="phone" maxlength="10" value="" />
+                        <div id="phone_error" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="dob">Date of birth</label>
+                        <select id="year" name="year">
+                            <option value="">Year</option>
+                            <script language="javascript">
+                                for (var i = 1960; i < 2020; i++) {
+                                    document.write("<option value=\"" + i + "\">" + i + "</option>\n");
+                                }
+                            </script>
+                        </select>
+
+                        <select id="month" name="month">
+                            <option value="">Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+
+                        <select id="day" name="day">
+                            <option value="">Day</option>
+                            <script language="javascript">
+                                for (var i = 1; i <= 31; i++) {
+                                    if (i < 10) {
+                                        i = "0" + i;
+                                    }
+                                    document.write("<option value=\"" + i + "\">" + i + "</option>\n");
+
+                                }
+                            </script>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="gender">Gender <span style="color: red">*</span></label>
+                        <span><input type="radio" name="gender" value="male" id="gender" >Male</span>
+                        <span><input type="radio" name="gender" value="female" id="gender">Female</span>
+                        <div id="error_Gender" style="color: red"></div>
+                    </p>
+
+                    <p>
+                        <label for="address">Address <span style="color: red">*</span></label>
+                        <textarea name="address" id="address" cols="05" rows="05" maxlength="200"></textarea>
+                        <div id="error_Address" style="color: red"></div>
+                        <div id="counter"></div>
+                    </p>
+
+                    <p>
+
+                        <button id="submit" type="submit" >Submit</button>
+                        <a href="php/sign.php">Already registered please sign in</a>
+                    </p>
+
+                </form>
+
+                <div id="required">
+                    <p><span style="color: red">*</span> <b>Required Fields</b><br/>
+                        NOTE: You must activate your account after sign up</p>
+                </div>
+
+
+            </div>
+
+            <!--END #signup-inner -->
+        </div>
+
+        <!--END #signup-form -->   
+        </div>
+
+    </body>
+</html>

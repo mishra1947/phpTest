@@ -1,0 +1,29 @@
+<?php
+include 'config.php';
+//insert data
+if(isset($_POST)) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $uname= $_POST['uname'];
+    $email = $_POST['email'];
+    $pass = md5($_POST['password']);
+    $phone= $_POST['phone'];
+    $DOB = $_POST['day'].' '.$_POST['month'].' '.$_POST['year'];
+    $gender= $_POST['gender'];
+    $address = $_POST['address'];
+
+    $sql = "INSERT INTO registration (first_name, last_name, username, email, password, phone_number, date_of_birth, gender, address)
+           VALUES ('$fname', '$lname', '$uname', '$email', '$passs', '$phone', '$DOB', '$gender', '$address')";
+     $query = mysql_query($sql, $conn);
+    var_dump($query);
+    if ($query) {
+        echo "Data Inserted Successfully";
+        
+    } else {
+        echo "Error in Data Insertion";
+    }
+}
+
+mysql_close($conn);
+
+    

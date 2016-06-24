@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>javaScript traversing-dom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <ul  id="list">
+                <li>Select</li>
+                <li>Delete</li>
+                <li>Add</li>
+            </ul>
+        </div>
+        <button onclick="myFunction()">Try it</button>
+        <script>
+            function myFunction() {
+                //childNodes
+//                var childNode = document.body.childNodes;
+//                alert(childNode.length);
+//                for(var i=0; i<childNode.length; i++){
+//                console.log(childNode[i]);
+//             }
+
+                //children
+//               var children = document.body.children;
+//               alert(children.length);
+//                for(var i=0; i<children.length; i++){
+//                console.log(children[i]);
+//             }
+                // accessing li element
+                var childrenLi = document.getElementById("list").children;
+                console.log(childrenLi);
+            }
+        </script>
+    </body>
+</html>

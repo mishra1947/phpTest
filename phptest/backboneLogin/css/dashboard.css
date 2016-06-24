@@ -1,0 +1,204 @@
+/* 
+* simple Signup Form
+* Created by Oussama Afellad
+* www.premiumfreebies.eu
+* 29/08/2011
+*/
+
+body { 
+    background: #FDFDFD; 
+}
+body, input, textarea { 
+    font: 14px/24px Helvetica, Arial, sans-serif; 
+    color: #666; 
+}
+dashboard-input { 
+    width: 30% 
+}
+form { 
+    margin: 30px 0 0 0 
+}
+
+#submit, #submit_user_instructions,#update-button,#setting-button { 
+    background: url("../images/submit_bg.gif") repeat-x scroll 0 0 transparent; 
+    border: 1px solid #B7D6DF; 
+    border-radius: 2px 2px 2px 2px; 
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    color: #437182; 
+    cursor: pointer; 
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+    font-size: 14px;
+    font-weight: bold; 
+    height: 35px; 
+    padding: 6px 10px; 
+    text-shadow: 0 1px 0 #FFFFFF; 
+    width: auto; 
+}
+#submit,#submit_user_instructions,#update-button,#setting-button :hover { 
+    background: url("../images/submit_hover_bg.gif") repeat-x scroll 0 0 transparent; 
+    border: 1px solid #9FBAC0; 
+    cursor: pointer; 
+}
+a { 
+    color: #88BBC8; 
+    text-decoration: none; 
+}
+a:hover { 
+    color: #f26525 
+}
+#dashboard { 
+    width: 1178px; 
+    margin: 0 auto; 
+    margin-top: -3px; 
+    margin-bottom: 50px; 
+    background: #fff; 
+    padding: 40px; 
+    border: 10px solid #f2f2f2; 
+}
+#dashboard-icon { 
+    float: left; 
+    width: 300px; 
+    height: 95px; 
+}
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0; 
+    padding: 0; 
+    color: #444; 
+}
+h1 { 
+    float: right; 
+    margin: 0 0 30px; 
+    font-size: 15px; 
+    line-height: 34px; 
+}
+h2.secondary { 
+    float: left; 
+    width: 260px; 
+    font-size: 16px; 
+    font-weight: normal; 
+    color: #999; 
+    margin-bottom: 30px; 
+    line-height: 26px; 
+}
+h3 { 
+    margin: 30px 0 0 0 
+}
+.clearfix:after { 
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden; 
+}
+.clearfix { 
+    display: inline-block 
+} /* Hide from IE Mac \*/
+.clearfix { 
+    display: block; 
+} /* End hide from IE Mac */
+.none { 
+    display: none; 
+} /* End Clearfix _NO__DOTCOMMA__AFTER__*/
+
+#header { 
+    margin: 0 0 30px 0; 
+    border-bottom: 1px solid #efefef; 
+}
+#send p { 
+    margin-bottom: 20px 
+}
+textarea, #user_instruction { 
+    width: 20%; 
+    margin: 0 0 0 2px; 
+}
+#required p{
+    font-size:10px;
+}
+#apply { 
+    border-top: 1px solid #efefef; 
+    margin-top: 30px; 
+    padding: 20px 0 0 0; 
+}
+#apply ul { 
+    margin-bottom: 50px 
+}
+form label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-size: 12px; 
+}
+#gender{
+    width: 04%
+}
+#footer{
+    margin-top: 150px;
+    border-top: 1px solid #efefef;
+}
+#footer_menu{
+    width: 1178px;
+    height: 30px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color:  #437182;
+    border-radius: 8px;
+    margin-top:2px;
+}
+#footer_menu li { 
+    display: inline; 
+    padding: 20px;
+    margin: 20px;
+}
+#footer_menu ul {
+    display: inline; 
+    height: auto;
+    padding: 8px 0px;
+    margin: 20px;
+}
+#menu {
+    width: 1178px;
+    height: 30px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #437182;
+    border-radius: 8px;
+    margin-top:  -30px;
+}
+#menu li { 
+    display: inline; 
+    padding: 20px; 
+    margin: 40px;
+}
+#menu ul {
+    display: inline; 
+    height: auto;
+    padding: 8px 0px;
+    margin: 10px;
+}
+#logout{
+    float: right;
+    width: 50px;
+    height: 35px;
+    font-size: 10px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #437182;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+#profile_icon { 
+    float: left; 
+    text-align: center;
+    width: 65px; 
+    height: 65px; 
+    margin-left: 500px;
+}

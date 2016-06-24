@@ -1,0 +1,140 @@
+<!--<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <style>
+  body {
+   font-family: Verdana;
+  }
+  h1, h2, h3 {
+   color: darkblue;
+  }
+  .rating-circle {
+   height: 2em;
+   width: 2em;
+   border: .1em solid black;
+   border-radius: 1.1em;
+   display: inline-block;
+   margin: 0;
+   padding: .1em;
+  }
+
+  .rating-hover {
+   background-color: yellow;
+  }
+
+  .rating-chosen {
+   background-color: green;
+  }
+ </style>
+</head>
+<body>
+ <h1>Contoso Web Developer Conference</h1>
+ <h2>Finding elements using jQuery</h2>
+ <div>This session is about identifying elements using jQuery methods and selectors.</div>
+ <h3>Rate this session</h3>
+ <div id="rating-container">          
+ </div>
+
+<div>
+  <label for="max-value">Enter max value:</label>
+  <input type="text" id="max-value" />
+  <button type="button" id="update-max-value">Update max value</button>
+</div>
+ <button type="button" id="save-rating">Save rating</button>
+ <div id="saveHere"></div>
+
+ <script src="userManagement/js/jquery-1.9.0.js"></script>
+
+ <script>
+        $(document).ready(function(){
+           $('#update-max-value').one('click',function(){
+          value = $('#max-value').val();
+          for(var i = 1; i<=value; i++){
+          $('#rating-container').append("<div class='rating-circle'></div>" + " ");
+      }
+      $(".rating-circle").on("click",function () {
+                    $(this).addClass('rating-chosen');
+                    $(this).prevAll().addClass('rating-chosen');
+                    $(this).nextAll().removeClass('rating-chosen');
+                    var count = $(this).prevAll().length;
+                     totalCount = count+1;
+                });
+      });
+      $('#save-rating').click(function(){
+          $('#saveHere').text("Your rating is "+ totalCount +" out of "+ value);
+      });
+       
+        });
+
+
+ </script>
+</body>
+</html>-->
+
+<html>
+ 
+<script language="Javascript">
+function fileUpload(form, action_url, div_id) {
+    // Create the iframe...
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("id", "upload_iframe");
+    iframe.setAttribute("name", "upload_iframe");
+    iframe.setAttribute("width", "0");
+    iframe.setAttribute("height", "0");
+    iframe.setAttribute("border", "0");
+    iframe.setAttribute("style", "width: 0; height: 0; border: none;");
+ 
+    // Add to document...
+    form.parentNode.appendChild(iframe);
+    window.frames['upload_iframe'].name = "upload_iframe";
+ 
+    iframeId = document.getElementById("upload_iframe");
+ 
+    // Add event...
+    var eventHandler = function () {
+ 
+            if (iframeId.detachEvent) iframeId.detachEvent("onload", eventHandler);
+            else iframeId.removeEventListener("load", eventHandler, false);
+ 
+            // Message from server...
+            if (iframeId.contentDocument) {
+                content = iframeId.contentDocument.body.innerHTML;
+            } else if (iframeId.contentWindow) {
+                content = iframeId.contentWindow.document.body.innerHTML;
+            } else if (iframeId.document) {
+                content = iframeId.document.body.innerHTML;
+            }
+ 
+            document.getElementById(div_id).innerHTML = content;
+ 
+            // Del the iframe...
+            setTimeout('iframeId.parentNode.removeChild(iframeId)', 250);
+        }
+ 
+    if (iframeId.addEventListener) iframeId.addEventListener("load", eventHandler, true);
+    if (iframeId.attachEvent) iframeId.attachEvent("onload", eventHandler);
+ 
+    // Set properties of form...
+    form.setAttribute("target", "upload_iframe");
+    form.setAttribute("action", action_url);
+    form.setAttribute("method", "post");
+    form.setAttribute("enctype", "multipart/form-data");
+    form.setAttribute("encoding", "multipart/form-data");
+ 
+    // Submit the form...
+    form.submit();
+ 
+    document.getElementById(div_id).innerHTML = "Uploading...";
+}
+</script>
+ 
+<!-- index.php could be any script server-side for receive uploads. -->
+<form>
+<input type="file" name="datafile" /></br>
+<input type="button" value="upload"
+        onClick="fileUpload(this.form,'index.php','upload'); return false;" >
+<div id="upload"></div>
+</form>
+ 
+</html>
+
