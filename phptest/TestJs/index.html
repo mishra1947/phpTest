@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript demo</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <form name="form" id="form" method="post" action="#">
+            <fieldset style="width: 10%;border: none;">
+                <div>
+                    <div>Name:</div>
+                    <input type="text" id="name" name="name" value="" />*
+                    <span id="err-name"></span>
+                </div>
+
+                <div>
+                    <div>Email:</div>
+                    <input type="text" id="email" name="email"  value="" />*
+                    <span id="err-email"></span>
+                </div>
+
+                <div>
+                    <div>Phone:</div>
+                    <input type="text" id="phone" name="phone" maxlength="10" value="" />
+                    <span id="err-phone"></span>
+                </div>
+
+                <div>
+                    <div>Address:</div>
+                    <textarea id="address" name="address" rows="5" cols="19"></textarea>
+                    <span id="counter"></span>
+                </div>
+                <input type="button" value="Submit" name="submit" id="submit" />
+            </fieldset>
+        </form>
+        <div  style="padding: 2cm 0cm; display: none" id="user_data-div">
+            <table id="user_data">
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Address</td>
+                    <td>Option</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="http://localhost/TestJs/">Add</td>
+                </tr>
+            </table>
+        </div>
+        <script src="validate.js"></script>
+    </body>
+</html>
