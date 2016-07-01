@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .strike {
+                text-decoration: line-through;
+            }
+            .bold {
+                font-weight: bold;
+            }
+            .red {
+                color: red;
+            }
+            .has-error {
+                color: red;
+                background-color: yellow;
+            }
+            .orange {
+                color: orange;
+            }
+            body {
+                padding-top: 50px;
+            }
+
+            .anchor {
+                border: 2px dashed DarkOrchid;
+                padding: 10px 10px 200px 10px;
+            }
+
+            .fixed-header {
+                background-color: rgba(0, 0, 0, 0.2);
+                height: 50px;
+                position: fixed;
+                top: 0; left: 0; right: 0;
+            }
+
+            .fixed-header > a {
+                display: inline-block;
+                margin: 5px 15px;
+            }
+        </style>
+        <!--        <script src="jquery-1.9.0.js"></script>-->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="angular-sanitize/angular-sanitize.min.js"></script>
+    </head>
+    <body ng-app="app" class="ng-cloak">
+        <p ng-class="{strike: deleted, bold: important, 'has-error': error, orange: orange}">Map Syntax Example</p>
+        <label>
+            <input type="checkbox" ng-model="deleted">
+            deleted (apply "strike" class)
+        </label><br>
+        <label>
+            <input type="checkbox" ng-model="important">
+            important (apply "bold:" class)
+        </label><br>
+        <label>
+            <input type="checkbox" ng-model="error">
+            error (apply "error" class)
+        </label><br>
+        <label>
+            <input type="checkbox" ng-model="orange">
+            orange (apply "orange" class)
+        </label><br>
+        <p ng-class="[style1, style2, style3, style4]">using array syntax</p>
+        <input type="text" ng-model="style1" placeholder="write- red, bold, strike or orange"><br>
+        <input type="text" ng-model="style2" placeholder="write- red, bold, strike or orange"><br>
+        <input type="text" ng-model="style3" placeholder="write- red, bold, strike or orange"><br>
+        <input type="text" ng-model="style4" placeholder="write- red, bold, strike or orange"><br>
+
+        <p ng-class="[style5, {orange: warning}]">Using Array and Map Syntax</p>
+        <input ng-model="style5" placeholder="Type: bold, strike" aria-label="Type: bold, strike"><br>
+        <label><input type="checkbox" ng-model="warning"> warning (apply "orange" class)</label><br>
+
+        <div ng-controller="TestController">
+            <div ng-class="myClass">{{moto}}<span ng-bind-html="myHtml" ng-style="{'background-color':newClass.value}"></span></div>
+            <button ng-click="changeClass()">Change Class</button><br>
+            <div>
+                <select  ng-model="myClass" ng-change="newClass = myClass" ng-options="option.value as option.lable for option in options">
+                    <option value="">select any one</option>
+                </select>
+            </div>
+            <div ng-style="{'background-color':newClass}">
+                <p> selecting background color using above drop-down</p>
+            </div>
+
+            <div id="demo">
+                <p>use of angular.element function. it work like jquery/jqlite. but to use this first load jquery before the angular</p>
+            </div>
+            <!--$anchorScroll service-->
+<!--            <div class="fixed-header">
+                <a href="javascript:void(0)" ng-click="gotoAnchor(x)" ng-repeat="x in [1, 2, 3, 4, 5]">
+                    Go to anchor {{x}}
+                </a>
+            </div>
+            <div id="anchor{{x}}" class="anchor" ng-repeat="x in [1, 2, 3, 4, 5]">
+                Anchor {{x}} of 5
+            </div>-->
+
+            <!--            $cacheFactory service-->
+            <input ng-model="newCacheKey" placeholder="Key">
+            <input ng-model="newCacheValue" placeholder="Value">
+            <button ng-click="put(newCacheKey, newCacheValue)">Cache</button>
+
+            <p ng-if="keys.length">Cached Values</p>
+            <div ng-repeat="key in keys">
+                <span ng-bind="key"></span>
+                <span>: </span>
+                <b ng-bind="cache.get(key)"></b>
+            </div>
+
+            <p>Cache Info</p>
+            <div ng-repeat="(key, value) in cache.info()">
+                <span ng-bind="key"></span>
+                <span>: </span>
+                <b ng-bind="value"></b>
+            </div>
+
+
+            <!--           $log service-->
+            <div>
+                <p>Reload this page with open console, enter text and hit the log button...</p>
+                <label>Message:
+                    <input type="text" ng-model="message" /></label>
+                <button ng-click="$log.log(message)">log</button>
+                <button ng-click="$log.warn(message)">warn</button>
+                <button ng-click="$log.info(message)">info</button>
+                <button ng-click="$log.error(message)">error</button>
+                <button ng-click="$log.debug(message)">debug</button>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="controller.js"></script>
+
