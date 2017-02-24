@@ -1,2 +1,2 @@
 # phpTest
-These code are my practice codes 
+These codes are my practice codes 
